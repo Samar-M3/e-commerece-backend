@@ -10,11 +10,9 @@ const BlogSchema=new mongoose.Schema({
     },
     description:{
         type:String,
-        
     },
     brand:{
         type:String,
-
     },
     date:{
         type:String

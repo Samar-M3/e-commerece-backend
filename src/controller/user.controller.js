@@ -57,7 +57,7 @@ const login =async(req,res)=>{
                   value.password,
                   user.password
                 )
-                if(correctPass){
+                if(correctPass){  
                   const data=user.toObject()
                   delete data.password
                   const token =await jwt.sign(data,process.env.JWT_SECRET)
@@ -77,7 +77,6 @@ const login =async(req,res)=>{
       console.log(err);
     }
 }
-
 
 const signup=async(req,res)=>{
   const data=req.body
@@ -104,7 +103,7 @@ const signup=async(req,res)=>{
       throw error
     }
     res.status(200).send("user created succesfully")
-    }catch{
+    }catch(err){
       console.log(err)
       res.send(err)
   }
